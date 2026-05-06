@@ -1,13 +1,3 @@
-"""
-Brain Organization — Notificação diária via Telegram Bot
-Rode este script todo dia com GitHub Actions.
-
-Setup:
-1. No Telegram, procure @BotFather e mande /newbot
-2. Dê um nome e username para o bot — você recebe o BOT_TOKEN
-3. Procure @userinfobot e mande /start — você recebe seu CHAT_ID
-4. Adicione BOT_TOKEN e CHAT_ID como secrets no GitHub
-"""
 
 import openpyxl
 from datetime import datetime

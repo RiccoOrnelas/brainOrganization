@@ -2,7 +2,7 @@ name: Programação Diária Telegram
 
 on:
   schedule:
-    - cron: '0 8 * * *'   # todo dia às 07:00 horário de Brasília (UTC-3 = 10:00 UTC)
+    - cron: '0 2 * * *'   # todo dia às 07:00 horário de Brasília (UTC-3 = 10:00 UTC)
   workflow_dispatch:         # permite rodar manualmente pelo GitHub
 
 jobs:

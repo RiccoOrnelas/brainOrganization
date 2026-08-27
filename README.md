@@ -15,18 +15,21 @@ This is a personal productivity tool I built and use daily.
 The message looks something like this:
 
 ```
-🧠 Programação de Segunda
+Tarefas por ordem de Prioridade:
 
-🇺🇸 Inglês
-  • Praticar conversação
-  • Revisar vocabulário técnico
+🙏 Devocional
+📖 Palavra
 
-💻 Estudos Tech
-  • Estudar sobre CI/CD
-  • Resolver exercícios de algoritmos
+🎯 The three of the day:
+  • Aula de Inglês online (40 min)
+  • Caça de aplicações (40 min)
+  • LeetCode (1 hora)
 
-📖 Estudos Bíblicos
-  • Leitura do dia
+⏳ With the rest of the time:
+  • System Designer (40 min)
+  • Atividades open english (25 min)
+  • Bible is Open (1 hora)
+  • Mock interview IA (25 min)
 ```
 
 ---
@@ -47,11 +50,12 @@ The file `brain_organization.xlsx` has a sheet called `Dados_SMS` with this form
 
 | Dia | (unused) | Categoria | Tarefa | Ativo |
 |---|---|---|---|---|
-| Segunda | - | Inglês | Praticar conversação | SIM |
-| Segunda | - | Estudos Tech | Estudar CI/CD | SIM |
+| Segunda | Monday | Devocional | Palavra | SIM |
+| Segunda | Monday | The three of the day: | Aula de Inglês online (40 min) | SIM |
+| Segunda | Monday | With the rest of the time: | System Designer (40 min) | SIM |
 
 - **Dia** — day of the week in Portuguese
-- **Categoria** — task category (used to group and add icons)
+- **Categoria** — message section (used to group tasks, in order of priority)
 - **Tarefa** — the task description
 - **Ativo** — `SIM` to include, anything else to skip
 

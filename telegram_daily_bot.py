@@ -18,36 +18,32 @@ DAY_MAP = {
     "Sunday": "Domingo",
 }
 
-# Ícones conhecidos. Categoria nova sem ícone aqui NÃO some:
-# cai no fallback "🔸" e aparece na mensagem do mesmo jeito.
 ICONS = {
-    "Inglês": "🇺🇸",
-    "Estudos Tech": "💻",
-    "Aplicações": "🎯",
-    "Estudos Bíblicos": "📖",
+    "Devocional": "🙏",
+    "Palavra": "📖",
+    "The three of the day:": "🎯",
+    "With the rest of the time:": "⏳",
 }
-FALLBACK_ICON = "🔸"
-
 
 def get_schedule():
     today = DAY_MAP[datetime.now().strftime("%A")]
     wb = openpyxl.load_workbook(EXCEL)
     ws = wb["Dados_SMS"]
 
-    # Preserva a ordem em que as categorias aparecem na planilha
+    # Preserva a ordem em que as seções aparecem na planilha
     tasks = {}
     for row in ws.iter_rows(min_row=2, values_only=True):
         if row[0] is None:
             continue  # ignora linhas vazias
         dia, _, categoria, tarefa, ativo = row
         if dia == today and str(ativo).upper() == "SIM":
-            tasks.setdefault(categoria, []).append(tarefa)
+            tasks.setdefault(categoria, [])
+            if tarefa:
+                tasks[categoria].append(tarefa)
 
-    lines = [f"🧠 *Programação de {today}*\n"]
-    # Itera sobre as categorias ENCONTRADAS (dinâmico),
-    # não sobre um dicionário fixo — categoria nova nunca some.
+    lines = [f"📅 *Programação de {today}*\n", "*Tarefas por ordem de Prioridade:*\n"]
     for cat, items in tasks.items():
-        icon = ICONS.get(cat, FALLBACK_ICON)
+        icon = ICONS.get(cat, "")
         lines.append(f"{icon} *{cat}*")
         lines += [f"  • {t}" for t in items]
         lines.append("")

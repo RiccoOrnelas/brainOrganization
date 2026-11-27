@@ -19,11 +19,12 @@ DAY_MAP = {
 }
 
 ICONS = {
-    "Devocional": "🙏",
+    "Devocional": "✍️",
     "Palavra": "📖",
     "The three of the day:": "🎯",
     "With the rest of the time:": "⏳",
 }
+
 
 def get_schedule():
     today = DAY_MAP[datetime.now().strftime("%A")]
